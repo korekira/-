@@ -1,0 +1,24 @@
+import random
+
+class Obfuscator:
+    
+    def __init__(self, value):
+        self.__value = value
+        self.__obfuscate() 
+
+    def __obfuscate(self):
+
+        operation = random.choice(['+', '-', '*', '/'])
+        operand = random.randint(1, 10)
+
+        if operation == '+':
+            self.__value += operand
+        elif operation == '-':
+            self.__value -= operand
+        elif operation == '*':
+            self.__value *= operand
+        elif operation == '/' and operand != 0:
+            self.__value /= operand
+
+    def __str__(self):
+        return f"Результат": {round(self.__value, 2)}"
